@@ -18,7 +18,7 @@ import abstract1 from '@/assets/abstract-1.jpg';
 import abstract2 from '@/assets/abstract-2.jpg';
 import wildlife1 from '@/assets/wildlife-1.jpg';
 import automotive1 from '@/assets/automotive-1.jpg';
-import interior1 from '@/assets/interior-1.jpg';
+import barbet1 from '@/assets/blue-throated-barbet.webp';
 
 interface Photo {
   id: number;
@@ -136,9 +136,9 @@ const photos: Photo[] = [
   },
   {
     id: 16,
-    image: interior1,
-    title: "Light & Shadow",
-    description: "Architectural interior photography focusing on the interplay of natural light and space.",
+    image: barbet1,
+    title: "Blue Throated Barbet",
+    description: "Jewel of the forest, “kutru… kutru… kutru” call echoes through woodlands, making it easy to hear even when hidden among leaves.",
     gridClass: "md:col-span-1 md:row-span-1"
   }
 ];

@@ -7,7 +7,7 @@ export const PortfolioHeader = () => {
         {/* Logo */}
         <div className="text-center">
           <h1 className="text-hero font-light tracking-widest">
-            LENS & LIGHT
+            ADas FOTOGRAFIE
           </h1>
           <div className="h-px w-24 bg-border mx-auto mt-4"></div>
         </div>

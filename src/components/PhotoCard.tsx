@@ -2,31 +2,45 @@ import { useState } from 'react';
 
 interface PhotoCardProps {
   image: string;
+  webp?: string;
   title: string;
   description: string;
   animationClass?: string;
   onClick: () => void;
 }
 
-export const PhotoCard = ({ image, title, description, animationClass = '', onClick }: PhotoCardProps) => {
+export const PhotoCard = ({ image, webp, title, description, animationClass = '', onClick }: PhotoCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div 
+    <div
       className={`photo-card group cursor-pointer ${animationClass} ${
         imageLoaded ? 'opacity-100' : 'opacity-0'
       } transition-opacity duration-500`}
       onClick={onClick}
     >
       <div className="relative overflow-hidden rounded-lg bg-surface-secondary">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 ease-out"
-          onLoad={() => setImageLoaded(true)}
-          loading="lazy"
-        />
-        
+        {webp ? (
+          <picture>
+            <source srcSet={webp} type="image/webp" />
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-300 ease-out"
+              onLoad={() => setImageLoaded(true)}
+              loading="lazy"
+            />
+          </picture>
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-300 ease-out"
+            onLoad={() => setImageLoaded(true)}
+            loading="lazy"
+          />
+        )}
+
         {/* Hover overlay */}
         <div className="photo-overlay">
           <div className="text-white">

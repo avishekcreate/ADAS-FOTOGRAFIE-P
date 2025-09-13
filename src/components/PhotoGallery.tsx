@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { PhotoCard } from './PhotoCard';
 import { PhotoModal } from './PhotoModal';
 
-// Import images
+// Import only the images you have
 import portrait1 from '@/assets/portrait-1.jpg';
 import portrait2 from '@/assets/portrait-2.jpg';
 import portrait3 from '@/assets/portrait-3.jpg';
@@ -23,7 +23,7 @@ import waterfall1 from '@/assets/DSC01243.webp';
 
 interface Photo {
   id: number;
-  image: string;
+  image: string;      // always required
   title: string;
   description: string;
   gridClass: string;
@@ -137,16 +137,16 @@ const photos: Photo[] = [
   },
   {
     id: 16,
-    image: barbet1,
+    image: barbet1,  // ✅ webp only
     title: "Blue Throated Barbet",
     description: "Jewel of the forest, “kutru… kutru… kutru” call echoes through woodlands, making it easy to hear even when hidden among leaves.",
     gridClass: "md:col-span-1 md:row-span-1"
   },
   {
     id: 17,
-    image: waterfall1,
+    image: waterfall1,  // ✅ webp only
     title: "Pumling Waterfall",
-    description: "Jewel of the forest, “kutru… kutru… kutru” call echoes through woodlands, making it easy to hear even when hidden among leaves.",
+    description: "Crystal-clear waters cascading down mossy rocks, a refreshing escape into nature's embrace.",
     gridClass: "md:col-span-1 md:row-span-1"
   }
 ];
@@ -181,7 +181,7 @@ export const PhotoGallery = () => {
                 {column.map((photo) => (
                   <div key={photo.id}>
                     <PhotoCard
-                      image={photo.image}
+                      image={photo.image}   // 👈 just pass one image (jpg or webp)
                       title={photo.title}
                       description={photo.description}
                       animationClass=""

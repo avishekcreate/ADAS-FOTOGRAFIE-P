@@ -18,8 +18,6 @@ import abstract1 from '@/assets/abstract-1.jpg';
 import abstract2 from '@/assets/abstract-2.jpg';
 import wildlife1 from '@/assets/wildlife-1.jpg';
 import automotive1 from '@/assets/automotive-1.jpg';
-import barbet1 from '@/assets/blue-throated-barbet.webp';
-import waterfall1 from '@/assets/DSC01243.webp';
 
 interface Photo {
   id: number;
@@ -133,20 +131,6 @@ const photos: Photo[] = [
     image: portrait3,
     title: "Weatherdom",
     description: "A portrait study explof age and the stories written in weathered hands.",
-    gridClass: "md:col-span-1 md:row-span-1"
-  },
-  {
-    id: 16,
-    image: barbet1,  // ✅ webp only
-    title: "Blue Throated Barbet",
-    description: "Jewel of the forest, “kutru… kutru… kutru” call echoes through woodlands, making it easy to hear even when hidden among leaves.",
-    gridClass: "md:col-span-1 md:row-span-1"
-  },
-  {
-    id: 17,
-    image: waterfall1,  // ✅ webp only
-    title: "Pumling Waterfall",
-    description: "Crystal-clear waters cascading down mossy rocks, a refreshing escape into nature's embrace.",
     gridClass: "md:col-span-1 md:row-span-1"
   }
 ];
